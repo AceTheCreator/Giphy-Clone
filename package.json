@@ -1,0 +1,8 @@
+{
+  "name": "Job-listing",
+  "version": "1.0.0",
+  "description": "A web app for job listing",
+  "main": "index.js",
+  "author": "devlopergene",
+  "license": "MIT"
+}
