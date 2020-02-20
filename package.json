@@ -9,6 +9,9 @@
     "axios": "^0.19.2",
     "graceful-fs": "^4.2.3"
   },
+  "scripts": {
+    "start": "parcel index.html"
+  },
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
