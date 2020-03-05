@@ -2,10 +2,13 @@
 @import "_reset.scss";
 @mixin flex {
     display: flex;  
+    flex-wrap: nowrap;
 }
 $colors:(
     primary: black,
     secondary: #6d45f5,
+    tetiary: white,
+    buttonColor: #c04bc3,
 );
 @function color ($color-name){
     @return map-get($colors , $color-name )
@@ -18,10 +21,53 @@ body{
     width: 100%;
     background: rgb(0, 0, 0);
 }
-
 .container{
     padding-right: 200px;
     padding-left: 200px;
     margin-right: auto;
     margin-left: auto;
+}
+nav{
+    @include flex();
+    justify-content: space-between;
+    margin-top: 10px;
+    .logo{
+        img{
+            width: 120px;
+        }
+    }
+    .search-bar{
+        text-align: center;
+        form{
+            margin-top: 3px;
+            input{
+                height: 5vh;
+                width: 600px;
+                text-indent: 10px;
+                font-size: 15px;
+            }
+            button{
+                background: color(buttonColor);
+                margin-left: -4px;
+                margin-top: -10px;
+                width: 120px;
+                height: 5vh;
+                border-color: transparent;
+                font-weight: bold;
+                color: color(tetiary);
+            }
+        }
+    }
+    .social{
+        color: color(tetiary);
+        margin-top: 5px;
+        img{
+            width: 30px;
+        }
+    }
+}
+
+.trending{
+    color: color(tetiary);
+    margin-top: 20px;
 }

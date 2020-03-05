@@ -1,39 +1,26 @@
-// Setting up map view
+const gifs = document.getElementById('gifs');
+function GetTrendingGifs() {
+  axios.get('http://api.giphy.com/v1/gifs/trending?api_key=TXA94dHSCPNErgABsutcebsDRHO6MBmM')
+    .then((result) => {
+      const { data } = result.data;
+      let output = '<div class="result">';
+      data.forEach((res) => {
+        const gifPreview = res.images.preview_webp.url;
+        console.log(gifPreview);
+        console.log(res);
+        output += `
+       <div class='row'>
+       <div class='gifs'>
+       <img src=${gifPreview} alt=${res.id}/>
+       </div>
+       </div>
+        `;
+        output += '</div>';
+        gifs.innerHTML = output;
+      });
+    }).catch((err) => {
+      console.log(err);
+    });
+}
 
-window.onload = function () {
-  L.mapquest.key = 'rLbzy3HX4G1X1meYxWAbstb1pAp9aayG';
-  const baseLayer = L.mapquest.tileLayer('map');
-
-  const map = L.mapquest.map('map', {
-    center: [29.953745, -90.074158],
-    layers: baseLayer,
-    zoom: 10,
-  });
-
-  L.control.layers({
-    Map: baseLayer,
-  }).addTo(map);
-
-  const drawnItems = L.featureGroup().addTo(map);
-
-  map.addControl(new L.Control.Draw({
-    edit: {
-      featureGroup: drawnItems,
-      poly: {
-        allowIntersection: false,
-      },
-    },
-    draw: {
-      polygon: {
-        allowIntersection: false,
-        showArea: true,
-      },
-    },
-  }));
-
-  map.on(L.Draw.Event.CREATED, (event) => {
-    const { layer } = event;
-
-    drawnItems.addLayer(layer);
-  });
-};
+GetTrendingGifs();

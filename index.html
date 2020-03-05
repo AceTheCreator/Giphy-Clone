@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GeoSearch - Your all in one weather  app</title>
+    <title>GiphyClone</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <nav>
+      <div class="logo">
+       <img src="./static/log.gif" alt="giphy-logo">
+      </div>
+      <div class="search-bar">
+        <form action="">
+          <input type="search" name="search-bar" id="search" placeholder="Search for any gifs you like">
+        </form>
+      </div>
+      <div class="social">
+     <img src="./static/github.svg" alt="">
+      </div>
+    </nav>
+    <section class="trending">
+      <h6>Trending gifs</h6>
+      <div class="trending-gifs" id="gifs">
+        <span>Loading</span>
+      </div>
+    </section>
+  </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="index.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 </html>
