@@ -9,10 +9,9 @@ function GetTrendingGifs() {
         console.log(gifPreview);
         console.log(res);
         output += `
-       <div class='row'>
-       <div class='gifs'>
+        <div class='grid-sizer'></div>
+       <div class='grid-item'>
        <img src=${gifPreview} alt=${res.id}/>
-       </div>
        </div>
         `;
         output += '</div>';
@@ -23,4 +22,18 @@ function GetTrendingGifs() {
     });
 }
 
+
 GetTrendingGifs();
+
+// const grid = document.querySelector('.grid');
+// let msnry;
+
+// imagesLoaded(grid, () => {
+//   // init Isotope after all images have loaded
+//   msnry = new Masonry(grid, {
+//     itemSelector: '.grid-item',
+//     columnWidth: '.grid-sizer',
+//     percentPosition: true,
+//   });
+// });
+// console.log(msnry);

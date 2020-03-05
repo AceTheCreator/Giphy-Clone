@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/ */
 /* v1.0 | 20080212 */
+
+/* force scrollbar */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -119,10 +121,22 @@ nav .social img {
 .trending {
   color: white;
 }
-.gifs {
+
+.grid:after{
+    content: '';
+    display: block;
+    clear: both;
 }
-.gifs img{
-  background: red;
+.grid-sizer,
+.grid-item {
+  width: 25%;
+}
+.grid-item {
+  float: left;
+}
+.grid-item img {
+  display: block;
+  width: 100%;
 }
 
 
