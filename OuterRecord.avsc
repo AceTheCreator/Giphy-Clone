@@ -1,0 +1,28 @@
+{
+  "type" : "record",
+  "name" : "OuterRecord",
+  "doc" : "OuterRecord docstring",
+  "fields" : [ {
+    "name" : "innerRecord",
+    "type" : [ {
+      "type" : "record",
+      "name" : "InnerRecord1",
+      "doc" : "InnerRecord1 docstring",
+      "fields" : [ {
+        "name" : "innerRecord1Field",
+        "type" : "string",
+        "doc" : "innerRecord1Field docstring"
+      } ]
+    }, {
+      "type" : "record",
+      "name" : "InnerRecord2",
+      "doc" : "InnerRecord2 docstring",
+      "fields" : [ {
+        "name" : "innerRecord2Field",
+        "type" : "string",
+        "doc" : "innerRecord2Field docstring"
+      } ]
+    } ],
+    "doc" : "innerRecord docstring"
+  } ]
+}
